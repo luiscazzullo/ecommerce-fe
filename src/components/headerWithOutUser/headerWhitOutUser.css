@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.navbar {
+  background-color: #464697;
+}
+
+.navbarContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom: solid 1px #fff;
+}
+
+.logo {
+  font-size: 30px;
+  letter-spacing: 5px;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  padding: 10px 15px;
+}
+
+.icons > i {
+  color: #fff;
+  margin: 0 15px;
+  font-size: 30px;
+}
