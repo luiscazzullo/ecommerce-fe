@@ -1,29 +1,29 @@
 import React from "react";
-import "./shoppingCart.css";
 import { useState } from "react";
-import { Offcanvas } from "react-bootstrap";
+import "./shoppingCart.css";
 
 const ShoppingCart = () => {
-  const [show, setShow] = useState(false);
+  const [click, setClick] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const change = () => {
+    setClick(!click);
+  };
 
   return (
-    <div>
-      <div onClick={handleShow} className="me-2">
-        <i class="fas fa-shopping-cart"></i>
+    <>
+      <div>
+        <i onClick={change} class="fas fa-shopping-cart"></i>
       </div>
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
-      </Offcanvas>
-    </div>
+
+      <div className={click ? "shoppingMenu" : "shoppingMenuClose"}>
+        <div className="shoppingMenuHeader">
+          <div className="title">Carrito de Compras</div>
+          <div className="closeButton">
+            <i onClick={change} class="far fa-times-circle"></i>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 export default ShoppingCart;

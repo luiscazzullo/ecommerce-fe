@@ -22,6 +22,7 @@
 }
 
 .logo {
+  text-align: center;
   font-size: 30px;
   letter-spacing: 5px;
   padding: 10px 20px;
@@ -32,9 +33,95 @@
   display: flex;
   padding: 10px 15px;
 }
-
-.icons > i {
+.user {
+  position: relative;
+}
+.user i {
   color: #fff;
   margin: 0 15px;
   font-size: 30px;
+  cursor: pointer;
+}
+.links {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #464697;
+  top: 40px;
+  border-radius: 5px;
+  border: solid 2px #fff;
+  transition: all 0.5s;
+}
+
+.links p {
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.mobile {
+  width: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: #5555af;
+  transition: all 0.5s;
+}
+
+.mobileClose {
+  width: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
+.mobileHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-bottom: 2px solid #fff;
+}
+.mobileContainer p {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 20px;
+}
+
+.options {
+  width: 100%;
+  transition: all 3s;
+}
+
+.options p {
+  font-size: 25px;
+  border-bottom: 1px solid #fff;
+  padding: 10px 60px;
+}
+
+@media (max-width: 320px) {
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+  .icons {
+    display: none;
+  }
 }
