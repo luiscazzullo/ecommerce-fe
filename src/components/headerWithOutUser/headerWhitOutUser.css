@@ -61,6 +61,35 @@
   cursor: pointer;
 }
 
+.dropDown {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.dropDownTitle {
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.dropDownMenu {
+  position: absolute;
+  background-color: #464697;
+  border-radius: 5px;
+  border: solid 1px #fff;
+  padding: 10px 10px;
+}
+
+.dropDownMenu p {
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 5px;
+  border-bottom: solid 1px #fff;
+  cursor: pointer;
+}
+
 .mobile {
   width: 500px;
   height: 100vh;
@@ -76,13 +105,12 @@
 }
 
 .mobileClose {
-  width: 500px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  left: -100%;
+  left: -200%;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: #fff;
@@ -112,16 +140,43 @@
   padding: 10px 60px;
 }
 
-@media (max-width: 320px) {
-  .logoContainer {
-    display: flex;
-    align-items: center;
+@media (max-width: 576px) {
+  .icons {
+    display: none;
+  }
+
+  .dropDown {
+    display: none;
   }
 
   .mobileMenu {
     display: block;
   }
-  .icons {
-    display: none;
+
+  .logoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbarContainer {
+    display: block;
+  }
+  .search {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    letter-spacing: 0px;
+  }
+
+  .mobile {
+    width: 100%;
+  }
+  .mobileClose {
+    width: 100%;
   }
 }

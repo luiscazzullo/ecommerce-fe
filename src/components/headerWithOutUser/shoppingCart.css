@@ -13,6 +13,7 @@ i {
 
 .shoppingMenu {
   width: 500px;
+  z-index: 9999;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,10 +30,11 @@ i {
   width: 500px;
   height: 100vh;
   display: flex;
+  z-index: 9999;
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -200%;
   overflow-y: scroll;
   border-radius: 10px;
   background-color: #fff;
@@ -55,4 +57,16 @@ i {
 
 .closeButton {
   padding: 15px 10px;
+}
+
+@media (max-width: 320px) {
+  i {
+    font-size: 25px;
+  }
+  .shoppingMenu {
+    width: 100%;
+  }
+  .shoppingMenuClose {
+    width: 100%;
+  }
 }

@@ -13,47 +13,86 @@ const HeaderWhitOutUser = () => {
 
   const changeActive = () => {
     setActive(!active);
+    setActiveMan(false);
+    setActiveWoman(false);
+    setMobile(false);
   };
   const changeActiveMan = () => {
     setActiveMan(!activeMan);
+    setActiveWoman(false);
+    setActive(false);
+    setMobile(false);
   };
   const changeActiveWoman = () => {
     setActiveWoman(!activeWoman);
+    setActiveMan(false);
+    setActive(false);
+    setMobile(false);
   };
 
   const changeMobile = () => {
     setMobile(!mobile);
+    setActiveWoman(false);
+    setActiveMan(false);
+    setActive(false);
   };
   return (
-    <nav className="navbar">
-      <div className="navbarContainer">
-        <div className="logoContainer">
-          <div className="mobileMenu">
-            <i onClick={changeMobile} class="fas fa-bars"></i>
+    <>
+      <nav className="navbar">
+        <div className="navbarContainer">
+          <div className="logoContainer">
+            <div className="mobileMenu">
+              <i onClick={changeMobile} class="fas fa-bars"></i>
+            </div>
+            <div className="logo">AMAZONAS</div>
+            <div className="mobileMenu">
+              <ShoppingCart />
+            </div>
           </div>
-          <div className="logo">AMAZONAS</div>
-          <div className="mobileMenu">
+          <div className="search">
+            <HeaderSearch />
+          </div>
+          <div className="icons">
+            <div className="user">
+              <i onClick={changeActive} class="fas fa-user"></i>
+              {active && (
+                <div className="links">
+                  <p>Iniciar Sesion</p>
+                  <p>Registrarse</p>
+                </div>
+              )}
+            </div>
             <ShoppingCart />
           </div>
         </div>
-        <HeaderSearch />
-        <div className="icons">
-          <div className="user">
-            <i onClick={changeActive} class="fas fa-user"></i>
-            {active && (
-              <div className="links">
-                <Link to={`/login`}>
-                  <p>Iniciar Sesion</p>
-                </Link>
-                <Link to={`/registration`}>
-                  <p>Registrarse</p>
-                </Link>
-              </div>
+
+        <div className="dropDown">
+          <div className="dropDownTitle" onClick={changeActiveMan}>
+            Hombres <i class="fas fa-sort-down"></i>
+            {activeMan && (
+              <>
+                <div className="dropDownMenu">
+                  <p>Pantalones</p>
+                  <p>Remeras</p>
+                  <p>Abrigos</p>
+                </div>
+              </>
             )}
           </div>
-          <ShoppingCart />
+          <div className="dropDownTitle" onClick={changeActiveWoman}>
+            Mujeres <i class="fas fa-sort-down"></i>
+            {activeWoman && (
+              <>
+                <div className="dropDownMenu">
+                  <p>Pantalones</p>
+                  <p>Remeras</p>
+                  <p>Abrigos</p>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </nav>
 
       <div className={mobile ? "mobile" : "mobileClose"}>
         <div className="mobileHeader">
@@ -62,7 +101,7 @@ const HeaderWhitOutUser = () => {
           </div>
         </div>
         <div className="mobileContainer">
-          <p onClick={changeActiveMan}>Hombre</p>
+          <p onClick={changeActiveMan}>Hombres</p>
           {activeMan && (
             <div className="options">
               <p>Pantalones</p>
@@ -70,7 +109,7 @@ const HeaderWhitOutUser = () => {
               <p>Abrigos</p>
             </div>
           )}
-          <p onClick={changeActiveWoman}>Mujer</p>
+          <p onClick={changeActiveWoman}>Mujeres</p>
           {activeWoman && (
             <div className="options">
               <p>Pantalones</p>
@@ -80,7 +119,7 @@ const HeaderWhitOutUser = () => {
           )}
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
