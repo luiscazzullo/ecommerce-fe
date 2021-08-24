@@ -9,7 +9,7 @@ form {
 }
 
 input {
-  width: 800px;
+  width: 100%;
   font-size: 20px;
   border: 0;
   outline: none;
@@ -23,22 +23,4 @@ input {
   right: 15px;
   top: 10px;
   font-size: 25px;
-}
-
-@media (max-width: 1024px) {
-  input {
-    width: 600px;
-  }
-}
-
-@media (max-width: 768px) {
-  input {
-    width: 350px;
-  }
-}
-
-@media (max-width: 576px) {
-  input {
-    width: 100%;
-  }
 }

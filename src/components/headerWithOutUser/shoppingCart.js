@@ -12,7 +12,7 @@ const ShoppingCart = () => {
   return (
     <>
       <div>
-        <i onClick={change} class="fas fa-shopping-cart"></i>
+        <i onClick={change} className="fas fa-shopping-cart"></i>
       </div>
 
       <div className={click ? "shoppingMenu" : "shoppingMenuClose"}>

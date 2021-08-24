@@ -5,7 +5,7 @@ const HeaderSearch = () => {
   return (
     <form>
       <input type="text" placeholder="¿Que estas Buscando?" />
-      <i class="fas fa-search"></i>
+      <i className="fas fa-search"></i>
     </form>
   );
 };

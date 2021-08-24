@@ -16,9 +16,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 0px;
   border-bottom: solid 1px #fff;
+  padding: 5px 0;
 }
 
 .logo {
@@ -31,34 +30,30 @@
 
 .icons {
   display: flex;
-  padding: 10px 15px;
-}
-.user {
-  position: relative;
-}
-.user i {
-  color: #fff;
-  margin: 0 15px;
-  font-size: 30px;
-  cursor: pointer;
-}
-.links {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  background-color: #464697;
-  top: 40px;
-  border-radius: 5px;
-  border: solid 2px #fff;
-  transition: all 0.5s;
+  align-items: center;
+  padding: 10px 30px;
 }
 
-.links p {
-  color: #fff;
-  text-align: center;
+.buttons p {
+  background-color: #fff;
+  color: #464697;
+  margin: 5px 0;
   font-size: 20px;
-  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
   cursor: pointer;
+  border: solid 1px #fff;
+  transition: ease-in 0.1s;
+}
+
+.buttons p:hover {
+  color: black;
+  background-color: #464697;
+}
+
+.search {
+  flex-grow: 1;
 }
 
 .dropDown {
@@ -123,7 +118,33 @@
   align-items: center;
   border-bottom: 2px solid #fff;
 }
-.mobileContainer p {
+
+.buttonsMobile {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonMobile {
+  background-color: #fff;
+  color: #464697;
+  margin: 15px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border: solid 1px #fff;
+  transition: ease-in 0.1s;
+}
+.link {
+  text-decoration: none;
+}
+.buttonMobile :hover {
+  color: black;
+  background-color: #464697;
+}
+
+.mobileContainer > p {
   color: #fff;
   font-size: 30px;
   padding: 10px 20px;
@@ -134,7 +155,8 @@
   transition: all 3s;
 }
 
-.options p {
+.options > p {
+  color: #fff;
   font-size: 25px;
   border-bottom: 1px solid #fff;
   padding: 10px 60px;

@@ -6,35 +6,23 @@ import ShoppingCart from "./shoppingCart";
 import { Link } from "react-router-dom";
 
 const HeaderWhitOutUser = () => {
-  const [active, setActive] = useState(false);
   const [activeMan, setActiveMan] = useState(false);
   const [activeWoman, setActiveWoman] = useState(false);
   const [mobile, setMobile] = useState(false);
 
-  const changeActive = () => {
-    setActive(!active);
-    setActiveMan(false);
-    setActiveWoman(false);
-    setMobile(false);
-  };
   const changeActiveMan = () => {
     setActiveMan(!activeMan);
     setActiveWoman(false);
-    setActive(false);
-    setMobile(false);
   };
   const changeActiveWoman = () => {
     setActiveWoman(!activeWoman);
     setActiveMan(false);
-    setActive(false);
-    setMobile(false);
   };
 
   const changeMobile = () => {
     setMobile(!mobile);
     setActiveWoman(false);
     setActiveMan(false);
-    setActive(false);
   };
   return (
     <>
@@ -53,14 +41,13 @@ const HeaderWhitOutUser = () => {
             <HeaderSearch />
           </div>
           <div className="icons">
-            <div className="user">
-              <i onClick={changeActive} class="fas fa-user"></i>
-              {active && (
-                <div className="links">
-                  <p>Iniciar Sesion</p>
-                  <p>Registrarse</p>
-                </div>
-              )}
+            <div className="buttons">
+              <Link className="link" to="/login">
+                <p>Iniciar Sesion</p>
+              </Link>
+              <Link className="link" to="/registro">
+                <p>REGISTRARSE</p>
+              </Link>
             </div>
             <ShoppingCart />
           </div>
@@ -101,7 +88,17 @@ const HeaderWhitOutUser = () => {
           </div>
         </div>
         <div className="mobileContainer">
-          <p onClick={changeActiveMan}>Hombres</p>
+          <div className="buttonsMobile">
+            <Link className="link" to="/login">
+              <p className="buttonMobile">Iniciar Sesion</p>
+            </Link>
+            <Link className="link" to="/registro">
+              <p className="buttonMobile">REGISTRARSE</p>
+            </Link>
+          </div>
+          <p onClick={changeActiveMan}>
+            Hombres <i class="fas fa-sort-down"></i>
+          </p>
           {activeMan && (
             <div className="options">
               <p>Pantalones</p>
@@ -109,7 +106,9 @@ const HeaderWhitOutUser = () => {
               <p>Abrigos</p>
             </div>
           )}
-          <p onClick={changeActiveWoman}>Mujeres</p>
+          <p onClick={changeActiveWoman}>
+            Mujeres <i class="fas fa-sort-down"></i>
+          </p>
           {activeWoman && (
             <div className="options">
               <p>Pantalones</p>
