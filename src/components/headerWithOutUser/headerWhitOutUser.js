@@ -6,21 +6,31 @@ import ShoppingCart from "./shoppingCart";
 import { Link } from "react-router-dom";
 
 const HeaderWhitOutUser = () => {
+  const [user, setUser] = useState(null);
   const [activeMan, setActiveMan] = useState(false);
   const [activeWoman, setActiveWoman] = useState(false);
   const [mobile, setMobile] = useState(false);
+  const [activeUser, setActiveUser] = useState(false);
 
   const changeActiveMan = () => {
     setActiveMan(!activeMan);
     setActiveWoman(false);
+    setActiveUser(false);
   };
   const changeActiveWoman = () => {
     setActiveWoman(!activeWoman);
     setActiveMan(false);
+    setActiveUser(false);
   };
 
   const changeMobile = () => {
     setMobile(!mobile);
+    setActiveWoman(false);
+    setActiveMan(false);
+  };
+
+  const changeActiveUser = () => {
+    setActiveUser(!activeUser);
     setActiveWoman(false);
     setActiveMan(false);
   };
@@ -41,14 +51,32 @@ const HeaderWhitOutUser = () => {
             <HeaderSearch />
           </div>
           <div className="icons">
-            <div className="buttons">
-              <Link className="link" to="/login">
-                <p>Iniciar Sesion</p>
-              </Link>
-              <Link className="link" to="/registro">
-                <p>REGISTRARSE</p>
-              </Link>
-            </div>
+            {user ? (
+              <div className="user">
+                <img src={user.avatar}></img>
+                <i class="fas fa-sort-down" onClick={changeActiveUser}></i>
+                {activeUser && (
+                  <>
+                    <div className="userOptions">
+                      <p> {user.name}</p>
+                      <p>Editar Perfil</p>
+                      <p>Mis Compras</p>
+                      {user.admin && <p>Administrador</p>}
+                      <p>Cerrar Sesion</p>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <div className="buttons">
+                <Link className="link" to="/login">
+                  <p>Iniciar Sesion</p>
+                </Link>
+                <Link className="link" to="/registro">
+                  <p>REGISTRARSE</p>
+                </Link>
+              </div>
+            )}
             <ShoppingCart />
           </div>
         </div>
@@ -88,14 +116,34 @@ const HeaderWhitOutUser = () => {
           </div>
         </div>
         <div className="mobileContainer">
-          <div className="buttonsMobile">
-            <Link className="link" to="/login">
-              <p className="buttonMobile">Iniciar Sesion</p>
-            </Link>
-            <Link className="link" to="/registro">
-              <p className="buttonMobile">REGISTRARSE</p>
-            </Link>
-          </div>
+          {user ? (
+            <>
+              <div onClick={changeActiveUser} className="userMobile">
+                <img src={user.avatar}></img>
+                {user.name}
+                <i class="fas fa-sort-down"></i>
+              </div>
+              {activeUser && (
+                <>
+                  <div className="options">
+                    <p>Editar Perfil</p>
+                    <p>Mis Compras</p>
+                    {user.admin && <p>Administrador</p>}
+                    <p>Cerrar Sesion</p>
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <div className="buttonsMobile">
+              <Link className="link" to="/login">
+                <p className="buttonMobile">Iniciar Sesion</p>
+              </Link>
+              <Link className="link" to="/registro">
+                <p className="buttonMobile">REGISTRARSE</p>
+              </Link>
+            </div>
+          )}
           <p onClick={changeActiveMan}>
             Hombres <i class="fas fa-sort-down"></i>
           </p>
