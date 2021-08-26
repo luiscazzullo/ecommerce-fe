@@ -10,8 +10,8 @@ const Footer = () => {
         <section className="social-media-footer">
           <ul>
             <li className="social-media-name">Facebook</li>
-            <li className="social-media-name">Twitter</li>
             <li className="social-media-name">Instagram</li>
+            <li className="social-media-name">Twitter</li>
           </ul>
         </section>
         <section className="all-rights-reserved">
