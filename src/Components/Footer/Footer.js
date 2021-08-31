@@ -2,8 +2,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer-container">
+    <footer className="d-flex align-items-center justify-content-around">
         <section className="amazonas-footer-logo">
           <h2>Amazonas</h2>
         </section>
@@ -21,9 +20,10 @@ const Footer = () => {
           </ul>
         </section>
         <section className="all-rights-reserved">
-          <h5>Todos los derechos reservados</h5>
+          <p>
+            <small>Todos los derechos reservados</small>
+          </p>
         </section>
-      </div>
     </footer>
   );
 }
