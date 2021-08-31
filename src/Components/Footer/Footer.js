@@ -9,9 +9,15 @@ const Footer = () => {
         </section>
         <section className="social-media-footer">
           <ul>
-            <li className="social-media-name">Facebook</li>
-            <li className="social-media-name">Instagram</li>
-            <li className="social-media-name">Twitter</li>
+            <li className="social-media-name">
+              <a href="#">Facebook</a>
+            </li>
+            <li className="social-media-name">
+              <a href="#">Instagram</a>
+            </li>
+            <li className="social-media-name">
+              <a href="#">Twitter</a>
+            </li>
           </ul>
         </section>
         <section className="all-rights-reserved">
@@ -21,5 +27,5 @@ const Footer = () => {
     </footer>
   );
 }
- 
+
 export default Footer;

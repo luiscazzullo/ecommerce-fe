@@ -29,6 +29,11 @@ footer {
   margin-top: 5px;
 }
 
+li a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .all-rights-reserved {
   width: 70px;
 }
