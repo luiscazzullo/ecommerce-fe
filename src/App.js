@@ -1,11 +1,14 @@
-import './App.css';
-import Footer from './Components/Footer/Footer';
+import Footer from "./Components/Footer/Footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import login from "../src/pages/login/login";
 
 function App() {
   return (
-    <div className="App">
-      <Footer/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login" exact component={login} />
+      </Switch>
+    </Router>
   );
 }
 
