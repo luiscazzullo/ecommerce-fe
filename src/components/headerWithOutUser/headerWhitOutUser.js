@@ -61,7 +61,11 @@ const HeaderWhitOutUser = () => {
                       <p> {user.name}</p>
                       <p>Editar Perfil</p>
                       <p>Mis Compras</p>
-                      {user.admin && <p>Administrador</p>}
+                      {user.admin && (
+                        <Link className="link" to="/admin">
+                          <p>Administrador</p>
+                        </Link>
+                      )}
                       <p>Cerrar Sesion</p>
                     </div>
                   </>
@@ -128,7 +132,11 @@ const HeaderWhitOutUser = () => {
                   <div className="options">
                     <p>Editar Perfil</p>
                     <p>Mis Compras</p>
-                    {user.admin && <p>Administrador</p>}
+                    {user.admin && (
+                      <Link className="link" to="/admin">
+                        <p>Administrador</p>
+                      </Link>
+                    )}
                     <p>Cerrar Sesion</p>
                   </div>
                 </>
