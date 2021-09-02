@@ -9,9 +9,6 @@ function App() {
       <AuthState>
         <Switch>
           <Route path="/login" exact component={Login} />
-          <Route path="/" exact>
-            <h1>Home</h1>
-          </Route>
         </Switch>
       </AuthState>
     </Router>

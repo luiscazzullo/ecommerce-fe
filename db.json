@@ -2,11 +2,13 @@
   "users": [
     {
       "email": "1@1.com",
-      "password": "123"
+      "password": "123",
+      "token": "12fran"
     },
     {
       "email": "2@2",
-      "password": "tinti"
+      "password": "tinti",
+      "token": "fran12"
     }
   ]
 }

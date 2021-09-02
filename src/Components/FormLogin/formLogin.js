@@ -1,13 +1,13 @@
 import "./formLogin.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import clientAxios from "../../config/clientAxios";
-import { Redirect } from "react-router";
 import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 
 const FormLogin = () => {
-  const { login, user } = useContext(AuthContext);
+  const history = useHistory();
+  const { login } = useContext(AuthContext);
   const [notUser, setNotUser] = useState(false);
   const [formLogin, setFormLogin] = useState({
     email: "",
@@ -29,10 +29,12 @@ const FormLogin = () => {
       params: { email: email, password: password },
     });
     if (data.length > 0) {
-      <Redirect to="/" exact />;
+      console.log(data);
+      login(data);
+      history.push("/");
     } else {
-      <Redirect to="/login" exact />;
       setNotUser(true);
+      setFormLogin({ email: "", password: "" });
     }
   };
 
