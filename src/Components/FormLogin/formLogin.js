@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import clientAxios from "../../config/clientAxios";
 import { Redirect } from "react-router";
+import { useContext } from "react";
+import AuthContext from "../../context/authContext";
 
 const FormLogin = () => {
+  const { login, user } = useContext(AuthContext);
   const [notUser, setNotUser] = useState(false);
   const [formLogin, setFormLogin] = useState({
     email: "",
@@ -26,9 +29,9 @@ const FormLogin = () => {
       params: { email: email, password: password },
     });
     if (data.length > 0) {
-      <Redirect to="/" />;
+      <Redirect to="/" exact />;
     } else {
-      <Redirect to="login" />;
+      <Redirect to="/login" exact />;
       setNotUser(true);
     }
   };
