@@ -9,11 +9,11 @@ import ahora30 from './Images/ahora30.svg';
 
 const HomeBenefits = () => {
   return (
-    <section className="homeBenefitsContainer px-2">
-      <h1 className="benefitsTitle mt-3">
+    <section className="homeBenefitsContainer container text-center">
+      <h1 className="benefitsTitle mt-4">
         Paga menos y comprá más, con estos increíbles descuentos
       </h1>
-      <section className="ahoraBenefits my-4">
+      <section className="ahoraBenefits my-5">
         <h3>Ahora 12, 18, 24 y 30</h3>
         <p>
           Solo para productos seleccionados con Visa, Master, Cabal y Amex
@@ -40,7 +40,7 @@ const HomeBenefits = () => {
           <img src={americanExpressLogo} className="cardImgPlaceholder mx-2" />
         </div>
       </section>
-      <section className="bankTransferBenefits my-4">
+      <section className="bankTransferBenefits my-5">
         <h3>
           ¡Hasta 15% de descuento en todos los prductos haciendo transferencia
           bancaria!
