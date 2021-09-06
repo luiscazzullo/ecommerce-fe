@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import ProductDescript from './Components/ProductsDescript/ProductDescript';
@@ -16,6 +17,16 @@ function App() {
       </Route>
       </Switch>
     </Router>
+=======
+import './App.css';
+import Footer from './Components/Footer/Footer';
+
+function App() {
+  return (
+    <div className="App">
+      <Footer/>
+    </div>
+>>>>>>> 563506355d4cd272e8f2e7aa758393d46bd19db6
   );
 }
 
