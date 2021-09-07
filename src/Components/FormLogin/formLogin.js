@@ -1,14 +1,12 @@
 import "./formLogin.css";
 import { Link, useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import clientAxios from "../../config/clientAxios";
 import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 
 const FormLogin = () => {
-  const history = useHistory();
-  const { login } = useContext(AuthContext);
-  const [notUser, setNotUser] = useState(false);
+  const [users, setUsers] = useState([]);
   const [formLogin, setFormLogin] = useState({
     email: "",
     password: "",
@@ -25,28 +23,24 @@ const FormLogin = () => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await clientAxios.get("/users", {
-      params: { email: email, password: password },
-    });
-    if (data.length > 0) {
-      console.log(data);
-      login(data);
-      history.push("/");
-    } else {
-      setNotUser(true);
-      setFormLogin({ email: "", password: "" });
-    }
+    const foundUser = users.find(
+      (user) => user.password === password && user.email === email
+    );
   };
+
+  const getUsers = async () => {
+    const { data } = await clientAxios.get("/users");
+    setUsers(data);
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <>
       <div className="container">
         <div className="title">Inicia Sesion</div>
-        {notUser && (
-          <>
-            <div className="alert">USUARIO O CONTRASEÑA INCORRECTA</div>
-          </>
-        )}
         <form onSubmit={handleOnSubmit}>
           <label>Email</label>
           <input

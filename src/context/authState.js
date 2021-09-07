@@ -19,7 +19,6 @@ const AuthState = ({ children }) => {
     try {
       dispatch({ type: LOADING_LOGIN });
       const response = await clientAxios.post("/users", data);
-
       dispatch({
         type: SUCCESS_LOGIN,
         payload: response.data,
