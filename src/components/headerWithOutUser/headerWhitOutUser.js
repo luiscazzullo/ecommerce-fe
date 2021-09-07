@@ -36,7 +36,7 @@ const HeaderWhitOutUser = () => {
   };
   return (
     <>
-      <nav className="navbar">
+      <nav className="theNavbar">
         <div className="navbarContainer">
           <div className="logoContainer">
             <div className="mobileMenu">
