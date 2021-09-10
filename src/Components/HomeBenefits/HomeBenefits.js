@@ -1,11 +1,11 @@
 import './HomeBenefits.css';
-import visaLogo from './Images/visaLogo.png';
-import mastercardLogo from './Images/mastercardLogo.png';
-import americanExpressLogo from './Images/americanExpressLogo.png';
-import ahora12 from './Images/ahora12.svg';
-import ahora18 from './Images/ahora18.svg';
-import ahora24 from './Images/ahora24.svg';
-import ahora30 from './Images/ahora30.svg';
+import visaLogo from './Img/visaLogo.png';
+import mastercardLogo from './Img/mastercardLogo.png';
+import americanExpressLogo from './Img/americanExpressLogo.png';
+import ahora12 from './Img/ahora12.svg';
+import ahora18 from './Img/ahora18.svg';
+import ahora24 from './Img/ahora24.svg';
+import ahora30 from './Img/ahora30.svg';
 
 const HomeBenefits = () => {
   return (
