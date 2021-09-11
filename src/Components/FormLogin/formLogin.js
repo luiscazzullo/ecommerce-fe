@@ -1,12 +1,12 @@
 import "./formLogin.css";
 import { Link, useHistory } from "react-router-dom";
-import { useState, useEffect } from "react";
-import clientAxios from "../../config/clientAxios";
+import { useState } from "react";
 import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 
 const FormLogin = () => {
-  const [users, setUsers] = useState([]);
+  const history = useHistory();
+  const { login, auth, message } = useContext(AuthContext);
   const [formLogin, setFormLogin] = useState({
     email: "",
     password: "",
@@ -23,24 +23,18 @@ const FormLogin = () => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const foundUser = users.find(
-      (user) => user.password === password && user.email === email
-    );
+    login(formLogin);
   };
 
-  const getUsers = async () => {
-    const { data } = await clientAxios.get("/users");
-    setUsers(data);
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
+  {
+    auth && history.push("/");
+  }
 
   return (
     <>
       <div className="container">
         <div className="title">Inicia Sesion</div>
+        <p>{message}</p>
         <form onSubmit={handleOnSubmit}>
           <label>Email</label>
           <input

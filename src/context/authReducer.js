@@ -1,4 +1,4 @@
-import { SUCCESS_LOGIN, LOADING_LOGIN, ERROR_LOGIN } from "../types";
+import { ERROR_LOGIN, SUCCESS_LOGIN } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -10,6 +10,11 @@ export default (state, action) => {
         token: action.payload.token,
         user: action.payload.user,
         loading: false,
+      };
+    case ERROR_LOGIN:
+      return {
+        ...state,
+        message: action.payload.message,
       };
     default:
       return state;

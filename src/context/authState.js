@@ -18,7 +18,7 @@ const AuthState = ({ children }) => {
   const login = async (data) => {
     try {
       dispatch({ type: LOADING_LOGIN });
-      const response = await clientAxios.post("/users", data);
+      const response = await clientAxios.post("/auth/login", data);
       dispatch({
         type: SUCCESS_LOGIN,
         payload: response.data,
@@ -26,7 +26,7 @@ const AuthState = ({ children }) => {
     } catch (error) {
       dispatch({
         type: ERROR_LOGIN,
-        payload: { message: "Algo salio mal" },
+        payload: { message: "El usuario no esta registrado" },
       });
     }
   };
