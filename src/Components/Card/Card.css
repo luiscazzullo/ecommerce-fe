@@ -1,0 +1,20 @@
+.card {
+  width: 18rem;
+}
+
+.btn-shop-primary,
+.btn-shop-secondary {
+  background-color: #464697;
+  border-radius: 0.3rem;
+  border-style: none;
+  padding: 8px 20px;
+  width: 100%;
+}
+
+.btn-shop-secondary {
+  background-color: #7f7fd9;
+}
+
+.img-card-properties {
+  height: auto;
+}
