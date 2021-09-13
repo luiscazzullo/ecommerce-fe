@@ -24,11 +24,10 @@ const FormLogin = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     login(formLogin);
+    if (auth) {
+      history.push("/");
+    }
   };
-
-  {
-    auth && history.push("/");
-  }
 
   return (
     <>
@@ -54,7 +53,10 @@ const FormLogin = () => {
           <input className="button" type="submit" value="INICIAR SESION" />
         </form>
         <div>
-          No tienes cuenta aun? <Link className="link">Crear cuenta</Link>
+          No tienes cuenta aun?{" "}
+          <Link to="/registro" className="link">
+            Crear cuenta
+          </Link>
         </div>
       </div>
     </>
