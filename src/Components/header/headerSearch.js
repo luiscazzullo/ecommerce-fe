@@ -4,7 +4,11 @@ import "./headerSearch.css";
 const HeaderSearch = () => {
   return (
     <>
-      <input type="text" placeholder="¿Que estas Buscando?" />
+      <input
+        className="headerSearch"
+        type="text"
+        placeholder="¿Que estas Buscando?"
+      />
     </>
   );
 };

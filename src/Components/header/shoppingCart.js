@@ -17,7 +17,7 @@ const ShoppingCart = () => {
 
       <div className={click ? "shoppingMenu" : "shoppingMenuClose"}>
         <div className="shoppingMenuHeader">
-          <div className="title">Carrito de Compras</div>
+          <div className="titleMenu">Carrito de Compras</div>
           <div className="closeButton">
             <i onClick={change} class="far fa-times-circle"></i>
           </div>

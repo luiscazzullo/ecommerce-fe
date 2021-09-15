@@ -179,10 +179,12 @@
 }
 
 img {
-  width: 70px;
+  width: 50px;
   height: 40px;
   margin: 0 10px;
+  object-fit: cover;
 }
+
 .userOptions {
   position: absolute;
   top: 45px;
@@ -190,6 +192,7 @@ img {
   border: solid 1px #fff;
   border-radius: 5px;
   padding: 10px 5px;
+  cursor: pointer;
 }
 
 .userOptions > p:first-child {
@@ -198,10 +201,25 @@ img {
   border-bottom: 1px solid #fff;
 }
 
+.userOptions > p:first-child:hover {
+  font-size: 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  background-color: #464697;
+  cursor: default;
+}
+
 .userOptions > p {
   color: #fff;
   padding: 5px;
 }
+
+.userOptions > p:hover {
+  color: black;
+  background-color: #fff;
+}
+
 @media (max-width: 576px) {
   .icons {
     display: none;
@@ -229,7 +247,7 @@ img {
     display: block;
   }
   .search {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
 }

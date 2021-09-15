@@ -1,11 +1,10 @@
 import "./formLogin.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 
 const FormLogin = () => {
-  const history = useHistory();
   const { login, auth, message } = useContext(AuthContext);
   const [formLogin, setFormLogin] = useState({
     email: "",
@@ -24,9 +23,6 @@ const FormLogin = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     login(formLogin);
-    if (auth) {
-      history.push("/");
-    }
   };
 
   return (

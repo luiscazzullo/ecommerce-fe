@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
-import "./headerWhitOutUser.css";
+import "./header.css";
 import HeaderSearch from "./headerSearch";
 import ShoppingCart from "./shoppingCart";
 import { Link } from "react-router-dom";
@@ -8,7 +8,6 @@ import AuthContext from "../../context/authContext";
 
 const HeaderWhitOutUser = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   const [activeMan, setActiveMan] = useState(false);
   const [activeWoman, setActiveWoman] = useState(false);
