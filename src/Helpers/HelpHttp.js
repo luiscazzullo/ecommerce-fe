@@ -1,13 +1,6 @@
-const url = 'http://localhost:5000/items'
-
-export const HelpHttp = () => {
-  const postItem = async () => {
-    const newItem = Revisar//,
-    const response = await fetch (url )
-  
-  }
-
-  const get = () => {};
-
-  const post = () => {};
+export const PostItems = async () => {
+  const url = 'http://localhost:5000/Items';
+  const response = await fetch (url);
+  const items = await response.json();
+  return items;
 }
