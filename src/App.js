@@ -1,4 +1,3 @@
-import Footer from "./Components/Footer/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./pages/login/login";
 import AuthState from "./context/authState";

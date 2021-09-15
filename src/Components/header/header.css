@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.navbar {
+  background-color: #464697;
+}
+
+.navbarContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: solid 1px #fff;
+  padding: 5px 0;
+}
+
+.logo {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 5px;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.buttons p {
+  background-color: #fff;
+  color: #464697;
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border: solid 1px #fff;
+  transition: ease-in 0.1s;
+}
+
+.buttons p:hover {
+  color: black;
+  background-color: #464697;
+}
+
+.search {
+  flex-grow: 1;
+}
+
+.dropDown {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.dropDownTitle {
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.dropDownMenu {
+  position: absolute;
+  background-color: #464697;
+  border-radius: 5px;
+  border: solid 1px #fff;
+  padding: 10px 10px;
+}
+
+.dropDownMenu p {
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 5px;
+  border-bottom: solid 1px #fff;
+  cursor: pointer;
+}
+
+.mobile {
+  width: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: #5555af;
+  transition: all 0.5s;
+}
+
+.mobileClose {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -200%;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
+.mobileHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-bottom: 2px solid #fff;
+}
+
+.buttonsMobile {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonMobile {
+  background-color: #fff;
+  color: #464697;
+  margin: 15px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border: solid 1px #fff;
+  transition: ease-in 0.1s;
+}
+.link {
+  text-decoration: none;
+}
+.buttonMobile :hover {
+  color: black;
+  background-color: #464697;
+}
+
+.mobileContainer > p {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 20px;
+}
+
+.options {
+  width: 100%;
+  transition: all 3s;
+}
+
+.options > p {
+  color: #fff;
+  font-size: 25px;
+  border-bottom: 1px solid #fff;
+  padding: 10px 60px;
+}
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.userMobile {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+}
+
+img {
+  width: 50px;
+  height: 40px;
+  margin: 0 10px;
+  object-fit: cover;
+}
+
+.userOptions {
+  position: absolute;
+  top: 45px;
+  background-color: #464697;
+  border: solid 1px #fff;
+  border-radius: 5px;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.userOptions > p:first-child {
+  font-size: 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+}
+
+.userOptions > p:first-child:hover {
+  font-size: 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  background-color: #464697;
+  cursor: default;
+}
+
+.userOptions > p {
+  color: #fff;
+  padding: 5px;
+}
+
+.userOptions > p:hover {
+  color: black;
+  background-color: #fff;
+}
+
+@media (max-width: 576px) {
+  .icons {
+    display: none;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .dropDown {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbarContainer {
+    display: block;
+  }
+  .search {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    letter-spacing: 0px;
+  }
+
+  .mobile {
+    width: 100%;
+  }
+  .mobileClose {
+    width: 100%;
+  }
+}
