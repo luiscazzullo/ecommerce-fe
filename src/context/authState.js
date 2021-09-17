@@ -45,7 +45,7 @@ const AuthState = ({ children }) => {
     authToken(token);
     try {
       dispatch({ type: AUTH_USER_LOADING });
-      const response = clientAxios.get("/auth/renew");
+      const response = await clientAxios.get("/auth/renew");
       dispatch({
         type: AUTH_USER_SUCCESS,
         payload: response.data,
