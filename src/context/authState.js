@@ -2,7 +2,15 @@ import { useReducer } from "react";
 import AuthContext from "../context/authContext";
 import AuthReducer from "./authReducer";
 import clientAxios from "../config/clientAxios";
-import { SUCCESS_LOGIN, LOADING_LOGIN, ERROR_LOGIN } from "../types";
+import authToken from "../config/token";
+import {
+  SUCCESS_LOGIN,
+  LOADING_LOGIN,
+  ERROR_LOGIN,
+  AUTH_USER_LOADING,
+  AUTH_USER_ERROR,
+  AUTH_USER_SUCCESS,
+} from "../types";
 
 const AuthState = ({ children }) => {
   const INITIAL_STATE = {
@@ -10,7 +18,7 @@ const AuthState = ({ children }) => {
     auth: false,
     user: null,
     message: "",
-    loading: false,
+    loading: true,
   };
 
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
@@ -32,6 +40,24 @@ const AuthState = ({ children }) => {
     }
   };
 
+  const getAuthUser = async () => {
+    const token = localStorage.getItem("token");
+    authToken(token);
+    try {
+      dispatch({ type: AUTH_USER_LOADING });
+      const response = await clientAxios.get("/auth/renew");
+      dispatch({
+        type: AUTH_USER_SUCCESS,
+        payload: response.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: AUTH_USER_ERROR,
+        payload: { message: "El usuario no esta autenticado" },
+      });
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -41,6 +67,7 @@ const AuthState = ({ children }) => {
         message: state.message,
         loading: state.loading,
         login,
+        getAuthUser,
       }}
     >
       {children}
