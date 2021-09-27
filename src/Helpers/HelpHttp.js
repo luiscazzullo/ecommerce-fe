@@ -1,6 +1,9 @@
 export const PostItems = async () => {
-  const url = 'http://localhost:5000/Items';
-  const response = await fetch (url);
-  const items = await response.json();
-  return items;
-}
+  try {
+    const response = await fetch("/* Link del servidor definitivo */");
+    const items = await response.json();
+    return(items);
+  } catch (error) {
+    console.log(error);
+  }
+};
